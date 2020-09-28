@@ -1,0 +1,8 @@
+3) Frank-Wolfe for minmax problems
+
+    Marco Baggio
+
+   1) Analyze the first-order approaches for minmax problems
+   2) Compare Algorithm in [Maher Nouiehed et al] with Frank-Wolfe  
+steps and gradient projection steps on Robust Neural Network Training  
+problems from the same paper
