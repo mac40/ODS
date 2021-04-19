@@ -20,13 +20,17 @@ def FW(alpha, max_iter=100, tol=1e-8, callback=None):
         # .. of the use of sparse matrices ..
         Ax = x_t.T.dot(A.T).ravel()
         grad = (A.T.dot(Ax) - Atb)
-
+        print(grad)
         # .. the LMO results in a vector that is zero everywhere except for ..
         # .. a single index. Of this vector we only store its index and magnitude ..
         idx_oracle = np.argmax(np.abs(grad))
+        print(idx_oracle)
         mag_oracle = alpha * np.sign(-grad[idx_oracle])
+        print(alpha * np.sign(-grad[idx_oracle]))
         d_t = -x_t.copy()
+        print(f"dt ->{d_t}")
         d_t[idx_oracle] += mag_oracle
+        print(f"dt_idx ->{d_t[idx_oracle]}")
         g_t = - d_t.T.dot(grad).ravel()
         if g_t <= tol:
             break
